@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{FDBD3CCC-5C9D-4A60-8FF9-4307B6ED3FF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PEProtocol", "PEProtocol\PEProtocol.csproj", "{B339BBEF-BC61-4870-A281-6A8F5BA33A2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FDBD3CCC-5C9D-4A60-8FF9-4307B6ED3FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDBD3CCC-5C9D-4A60-8FF9-4307B6ED3FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDBD3CCC-5C9D-4A60-8FF9-4307B6ED3FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B339BBEF-BC61-4870-A281-6A8F5BA33A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B339BBEF-BC61-4870-A281-6A8F5BA33A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B339BBEF-BC61-4870-A281-6A8F5BA33A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B339BBEF-BC61-4870-A281-6A8F5BA33A2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
