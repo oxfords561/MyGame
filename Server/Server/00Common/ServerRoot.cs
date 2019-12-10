@@ -21,11 +21,11 @@ public class ServerRoot {
         //服务层
         //CfgSvc.Instance.Init();
         //CacheSvc.Instance.Init();
-        //NetSvc.Instance.Init();
+        NetSvc.Instance.Init();
         //TimerSvc.Instance.Init();
 
         //业务系统层
-        //LoginSys.Instance.Init();
+        LoginSys.Instance.Init();
         //GuideSys.Instance.Init();
         //StrongSys.Instance.Init();
         //ChatSys.Instance.Init();

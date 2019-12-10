@@ -15,7 +15,7 @@ class ServerStart {
     private static Socket m_ServerSocket;
 
     static void Main(string[] args) {
-        //ServerRoot.Instance.Init();
+        ServerRoot.Instance.Init();
 
         // 实例化socket
         m_ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);

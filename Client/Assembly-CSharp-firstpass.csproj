@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>D:\Unity2018\2019.2.13f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,7 +46,16 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup>     <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PoolManager.cs" />
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Unity2018\2019.2.13f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\Unity2018\2019.2.13f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PoolManager.cs" />
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\SpawnPool.cs" />
      <None Include="Assets\Plugins\PathologicalGames\readme.txt" />
@@ -74,9 +85,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/GitProjects/MyGame/Client/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine">
- <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -254,9 +262,6 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor">
- <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/3rdParty/DOTween/DOTween.dll</HintPath>

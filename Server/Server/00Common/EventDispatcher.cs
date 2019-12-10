@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 public class EventDispatcher : Singleton<EventDispatcher>
 {
     //委托原型
-    public delegate void OnActionHandler(Socket client, byte[] buffer);
+    public delegate void OnActionHandler(SocketHelper client, byte[] buffer);
 
     //委托字典
     private Dictionary<ushort, List<OnActionHandler>> dic = new Dictionary<ushort, List<OnActionHandler>>();
@@ -61,7 +61,7 @@ public class EventDispatcher : Singleton<EventDispatcher>
     /// </summary>
     /// <param name="protoCode"></param>
     /// <param name="param"></param>
-    public void Dispatch(ushort protoCode, Socket client, byte[] buffer)
+    public void Dispatch(ushort protoCode, SocketHelper client, byte[] buffer)
     {
         if (dic.ContainsKey(protoCode))
         {

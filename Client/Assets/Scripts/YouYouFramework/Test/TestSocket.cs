@@ -14,7 +14,7 @@ public class TestSocket : MonoBehaviour
 
     private void OnTestRsp(byte[] userData)
     {
-        TestProto2 p2 = TestProto2.GetProto(userData);
+        RspLoginProto p2 = RspLoginProto.GetProto(userData);
         Debug.Log("接收到 服务的消息: "+p2.msg);
     }
 
@@ -26,14 +26,20 @@ public class TestSocket : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.C))
         {
+            ReqLoginProto proto = new ReqLoginProto();
+            proto.acct = "水鱼津";
+            proto.pass = "102020";
+            GameEntry.Socket.SendMsg(proto);
+            
+            Debug.Log("发送完毕");
 
            //Task_SearchTaskProto proto = new Task_SearchTaskProto();
-           TestProto proto = new TestProto();
-           proto.msg = "你好我是客户端，这是我发的消息";
-           GameEntry.Socket.SendMsg(proto);
+        //    TestProto proto = new TestProto();
+        //    proto.msg = "你好我是客户端，这是我发的消息";
+        //    GameEntry.Socket.SendMsg(proto);
 
 
-           Debug.Log("发送消息完毕");
+        //    Debug.Log("发送消息完毕");
            //for (int i = 0; i < 100; i++)
            //{
            //    System_SendLocalTimeProto proto = new System_SendLocalTimeProto();

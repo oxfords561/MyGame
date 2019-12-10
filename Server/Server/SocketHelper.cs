@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 /// <summary>
 /// 网络连接 helper
 /// </summary>
-class SocketHelper
+public class SocketHelper
 {
     // 客户端 socket
-    private Socket m_Socket;
+    public Socket Client;
 
     // 接收数据的线程
     private Thread m_ReceiveThread;
@@ -42,7 +42,7 @@ class SocketHelper
 
     public SocketHelper(Socket client)
     {
-        m_Socket = client;
+        Client = client;
         //启动线程 进行接收数据
         m_ReceiveThread = new Thread(ReceiveMsg);
         m_ReceiveThread.Start();
@@ -57,7 +57,7 @@ class SocketHelper
     private void ReceiveMsg()
     {
         //异步接收数据
-        m_Socket.BeginReceive(m_ReceiveBuffer, 0, m_ReceiveBuffer.Length, SocketFlags.None, ReceiveCallBack, m_Socket);
+        Client.BeginReceive(m_ReceiveBuffer, 0, m_ReceiveBuffer.Length, SocketFlags.None, ReceiveCallBack, Client);
     }
     #endregion
 
@@ -70,7 +70,7 @@ class SocketHelper
     {
         try
         {
-            int len = m_Socket.EndReceive(ar);
+            int len = Client.EndReceive(ar);
 
             if (len > 0)
             {
@@ -148,18 +148,19 @@ class SocketHelper
                                     ms.Read(protoContent, 0, protoContent.Length);
                                 }
 
-                                EventDispatcher.Instance.Dispatch(protoCode, m_Socket, protoContent);
-                                Console.WriteLine("接收到客户端发送过来的消息 "+protoCode);
-                                if(protoCode == 1001)
-                                {
-                                    // 处理消息
-                                   TestProto proto = TestProto.GetProto(protoContent);
-                                   Console.WriteLine(proto.msg);
+                                EventDispatcher.Instance.Dispatch(protoCode, this, protoContent);
+                                Console.WriteLine("接收到消息开始转发");
+                                //Console.WriteLine("接收到客户端发送过来的消息 "+protoCode);
+                                //if(protoCode == 1001)
+                                //{
+                                //    // 处理消息
+                                //   TestProto proto = TestProto.GetProto(protoContent);
+                                //   Console.WriteLine(proto.msg);
 
-                                    TestProto2 p2 = new TestProto2();
-                                    p2.msg = "我是服务器 这是我得消息";
-                                    SendMsg(p2.ToArray());
-                                }
+                                //    TestProto2 p2 = new TestProto2();
+                                //    p2.msg = "我是服务器 这是我得消息";
+                                //    SendMsg(p2.ToArray());
+                                //}
                             }
 
                             //==============处理剩余字节数组===================
@@ -211,7 +212,7 @@ class SocketHelper
             else
             {
                 //客户端断开连接
-                Console.WriteLine("客户端{0}断开连接", m_Socket.RemoteEndPoint.ToString());
+                Console.WriteLine("客户端{0}断开连接", Client.RemoteEndPoint.ToString());
                 //m_Role.UpdateLastInWorldMap();
                 //WorldMapSceneMgr.Instance.RoleLeave(m_Role.RoleId, m_Role.LastInWorldMapId);
                 //RoleMgr.Instance.AllRole.Remove(m_Role);
@@ -220,7 +221,7 @@ class SocketHelper
         catch (Exception ex)
         {
             //客户端断开连接
-            Console.WriteLine("客户端{0}断开连接", m_Socket.RemoteEndPoint.ToString());
+            Console.WriteLine("客户端{0}断开连接", Client.RemoteEndPoint.ToString());
             //m_Role.UpdateLastInWorldMap();
             //WorldMapSceneMgr.Instance.RoleLeave(m_Role.RoleId, m_Role.LastInWorldMapId);
             //RoleMgr.Instance.AllRole.Remove(m_Role);
@@ -316,7 +317,7 @@ class SocketHelper
     /// <param name="buffer"></param>
     private void Send(byte[] buffer)
     {
-        m_Socket.BeginSend(buffer, 0, buffer.Length, SocketFlags.None, SendCallBack, m_Socket);
+        Client.BeginSend(buffer, 0, buffer.Length, SocketFlags.None, SendCallBack, Client);
     }
     #endregion
 
@@ -327,7 +328,7 @@ class SocketHelper
     /// <param name="ar"></param>
     private void SendCallBack(IAsyncResult ar)
     {
-        m_Socket.EndSend(ar);
+        Client.EndSend(ar);
 
         //继续检查队列
         OnCheckSendQueueCallBack();
