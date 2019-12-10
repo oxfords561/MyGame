@@ -317,6 +317,12 @@
  <Reference Include="zlib.net">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Plugins/zlib.net.dll</HintPath>
  </Reference>
+ <Reference Include="PEProtocol">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+ </Reference>
+ <Reference Include="PESocket">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PESocket.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>D:/GitProjects/MyGame/Client/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>

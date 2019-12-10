@@ -105,6 +105,8 @@
      <Compile Include="Assets\PoolManagerExampleFiles\Scripts\ReallySimpleAudioSpawner.cs" />
      <Compile Include="Assets\PoolManagerExampleFiles\Scripts\ReallySimpleParticleSpawner.cs" />
      <Compile Include="Assets\PoolManagerExampleFiles\Scripts\SimpleSpawner.cs" />
+     <Compile Include="Assets\Scripts\Test\TestProto.cs" />
+     <Compile Include="Assets\Scripts\Test\TestProto2.cs" />
      <Compile Include="Assets\Scripts\YouYouFramework\Component\AutoLoadTexture.cs" />
      <Compile Include="Assets\Scripts\YouYouFramework\Component\AutoNumberAnimation.cs" />
      <Compile Include="Assets\Scripts\YouYouFramework\Component\PageView.cs" />
@@ -584,6 +586,12 @@
  </Reference>
  <Reference Include="zlib.net">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Plugins/zlib.net.dll</HintPath>
+ </Reference>
+ <Reference Include="PEProtocol">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+ </Reference>
+ <Reference Include="PESocket">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PESocket.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

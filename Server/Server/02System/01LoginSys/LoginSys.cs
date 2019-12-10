@@ -105,13 +105,13 @@ public class LoginSys {
 
     public void ClearOfflineData(ServerSession session) {
         //写入下线时间
-        PlayerData pd = cacheSvc.GetPlayerDataBySession(session);
-        if (pd != null) {
-            pd.time = timerSvc.GetNowTime();
-            if (!cacheSvc.UpdatePlayerData(pd.id, pd)) {
-                PECommon.Log("Update offline time error", LogType.Error);
-            }
-            cacheSvc.AcctOffLine(session);
-        }
+        //PlayerData pd = cacheSvc.GetPlayerDataBySession(session);
+        //if (pd != null) {
+        //    pd.time = timerSvc.GetNowTime();
+        //    if (!cacheSvc.UpdatePlayerData(pd.id, pd)) {
+        //        PECommon.Log("Update offline time error", LogType.Error);
+        //    }
+        //    cacheSvc.AcctOffLine(session);
+        //}
     }
 }
