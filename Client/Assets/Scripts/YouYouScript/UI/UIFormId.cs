@@ -12,10 +12,15 @@ public class UIFormId
     /// <summary>
     /// Loading
     /// </summary>
-    public const int Loading = 1;
+    public const int LoadingWnd = 1;
 
     /// <summary>
-    /// 任务列表
+    /// 登录界面
     /// </summary>
-    public const int UI_Task = 101;
+    public const int LoginWnd = 2;
+
+    /// <summary>
+    /// 创建角色界面
+    /// </summary>
+    public const int CreateWnd = 3;
 }

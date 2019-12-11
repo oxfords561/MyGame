@@ -10,15 +10,20 @@ namespace YouYou
     /// </summary>
     public enum ProcedureState
     {
-        Launch = 0,
-        CheckVersion = 1,
-        Preload = 2,
-        ChangeScene = 3,
-        LogOn = 4,
-        SelectRole = 5,
-        EnterGame = 6,
-        WorldMap = 7,
-        GameLevel = 8
+        Root = 0,
+        Login = 1,
+        MainCity = 2,
+        Battle = 3,
+        Load = 4
+        // Launch = 0,
+        // CheckVersion = 1,
+        // Preload = 2,
+        // ChangeScene = 3,
+        // LogOn = 4,
+        // SelectRole = 5,
+        // EnterGame = 6,
+        // WorldMap = 7,
+        // GameLevel = 8
     }
 
     /// <summary>
@@ -74,18 +79,25 @@ namespace YouYou
         /// </summary>
         public void Init()
         {
-            FsmState<ProcedureManager>[] states = new FsmState<ProcedureManager>[9];
-            states[0] = new ProcedureLaunch();
-            states[1] = new ProcedureCheckVersion();
-            states[2] = new ProcedurePreload();
-            states[3] = new ProcedureChangeScene();
-            states[4] = new ProcedureLogOn();
-            states[5] = new ProcedureSelectRole();
-            states[6] = new ProcedureEnterGame();
-            states[7] = new ProcedureWorldMap();
-            states[8] = new ProcedureGameLevel();
+            FsmState<ProcedureManager>[] states = new FsmState<ProcedureManager>[5];
+            // states[0] = new ProcedureLaunch();
+            // states[1] = new ProcedureCheckVersion();
+            // states[2] = new ProcedurePreload();
+            // states[3] = new ProcedureChangeScene();
+            // states[4] = new ProcedureLogOn();
+            // states[5] = new ProcedureSelectRole();
+            // states[6] = new ProcedureEnterGame();
+            // states[7] = new ProcedureWorldMap();
+            // states[8] = new ProcedureGameLevel();
+
+            states[0] = new ProcedureRoot();
+            states[1] = new ProcedureLogin();
+            states[2] = new ProcedureMainCity();
+            states[3] = new ProcedureBattle();
+            states[4] = new ProcedureLoad();
 
             m_CurrFsm = GameEntry.Fsm.Create(this, states);
+
         }
 
         /// <summary>

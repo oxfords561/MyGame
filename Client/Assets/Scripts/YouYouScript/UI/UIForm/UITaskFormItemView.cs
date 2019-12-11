@@ -41,6 +41,6 @@ public class UITaskFormItemView : MonoBehaviour
         m_TaskId = entity.Id;
         m_OnClick = onClick;
 
-        txtName.text = GameEntry.Localization.GetString(GameEntry.DataTable.DataTableManager.TaskDBModel.Get(m_TaskId).Name);
+        // txtName.text = GameEntry.Localization.GetString(GameEntry.DataTable.DataTableManager.TaskDBModel.Get(m_TaskId).Name);
     }
 }

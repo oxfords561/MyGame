@@ -32,14 +32,14 @@ public class TestUI : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.B))
         {
-            GameEntry.UI.OpenUIForm(UIFormId.UI_Task);
+            GameEntry.UI.OpenUIForm(UIFormId.LoginWnd);
 
             //string str = GameEntry.Localization.GetString("Button.Receive");
             //Debug.LogError("str=" + str);
         }
         else if (Input.GetKeyUp(KeyCode.C))
         {
-            GameEntry.UI.CloseUIForm(UIFormId.UI_Task);
+            GameEntry.UI.CloseUIForm(UIFormId.LoginWnd);
         }
     }
 }

@@ -28,10 +28,10 @@ namespace YouYou
             {
                 return;
             }
-
+            /*
             //1.读表
             Sys_UIFormEntity entity = GameEntry.DataTable.DataTableManager.Sys_UIFormDBModel.Get(uiFormId);
-
+            
             if (entity == null)
             {
                 GameEntry.LogError(uiFormId + "对应的UI窗体不存在");
@@ -54,38 +54,65 @@ namespace YouYou
                         break;
                 }
 
-                LoadUIAsset(assetPath, (ResourceEntity resourceEntity) =>
-                {
-                    GameObject uiObj = Object.Instantiate((Object)resourceEntity.Target) as GameObject;
+                string path = string.Format("Assets/Download/UI/UIPrefab/{0}.prefab", assetPath);
+                //加载镜像
+                Object obj = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                GameObject UIObj = Object.Instantiate(obj) as GameObject;
+                UIObj.transform.SetParent(GameEntry.UI.GetUIGroup(entity.UIGroupId).Group);
+                UIObj.transform.localPosition = Vector3.zero;
+                UIObj.transform.localScale = Vector3.one;
+                // UIObj.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
+                // UIObj.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.);
+                // UIObj.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
+                // UIObj.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+                // UIObj.GetComponent<RectTransform>().anchorMax = Vector2.zero;
+                // UIObj.GetComponent<RectTransform>().pivot = new Vector2(0.5f,0.5f);
 
-                    //把克隆出来的资源 加入实例资源池
-                    GameEntry.Pool.RegisterInstanceResource(uiObj.GetInstanceID(), resourceEntity);
+                UIObj.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, 0);
+                UIObj.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0, 0);
+                UIObj.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+                UIObj.GetComponent<RectTransform>().anchorMax = Vector2.one;
 
-                    uiObj.transform.SetParent(GameEntry.UI.GetUIGroup(entity.UIGroupId).Group);
-                    uiObj.transform.localPosition = Vector3.zero;
-                    uiObj.transform.localScale = Vector3.one;
-
-                    formBase = uiObj.GetComponent<UIFormBase>();
-                    formBase.Init(uiFormId, entity.UIGroupId, entity.DisableUILayer == 1, entity.IsLock == 1, userData);
-                    m_OpenUIFormList.AddLast(formBase);
-
-                    if (onOpen != null)
-                    {
-                        onOpen(formBase);
-                    }
-                });
+                formBase = UIObj.GetComponent<UIFormBase>();
+                formBase.Init(uiFormId, entity.UIGroupId, entity.DisableUILayer == 1, entity.IsLock == 1, userData);
             }
+
+
+            // LoadUIAsset(assetPath, (ResourceEntity resourceEntity) =>
+            // {
+            //     GameObject uiObj = Object.Instantiate((Object)resourceEntity.Target) as GameObject;
+
+            //     //把克隆出来的资源 加入实例资源池
+            //     GameEntry.Pool.RegisterInstanceResource(uiObj.GetInstanceID(), resourceEntity);
+
+            //     uiObj.transform.SetParent(GameEntry.UI.GetUIGroup(entity.UIGroupId).Group);
+            //     uiObj.transform.localPosition = Vector3.zero;
+            //     uiObj.transform.localScale = Vector3.one;
+
+            //     formBase = uiObj.GetComponent<UIFormBase>();
+            //     formBase.Init(uiFormId, entity.UIGroupId, entity.DisableUILayer == 1, entity.IsLock == 1, userData);
+            //     m_OpenUIFormList.AddLast(formBase);
+
+            //     if (onOpen != null)
+            //     {
+            //         onOpen(formBase);
+            //     }
+
+            //      GameEntry.LogError("执行到最后");
+            // });
             else
             {
                 formBase.gameObject.SetActive(true);
                 formBase.Open(userData);
-                m_OpenUIFormList.AddLast(formBase);
-
-                if (onOpen != null)
-                {
-                    onOpen(formBase);
-                }
             }
+
+            if (onOpen != null)
+            {
+                onOpen(formBase);
+            }
+
+            m_OpenUIFormList.AddLast(formBase);
+            */
         }
         #endregion
 
@@ -103,7 +130,7 @@ namespace YouYou
             Object obj = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
             if (onComplete != null)
             {
-                onComplete(obj);
+                //onComplete(obj);
             }
 #else
             GameEntry.Resource.ResourceLoaderManager.LoadMainAsset(AssetCategory.UIPrefab, string.Format("Assets/Download/UI/UIPrefab/{0}.prefab", assetPath), (ResourceEntity resourceEntity) =>

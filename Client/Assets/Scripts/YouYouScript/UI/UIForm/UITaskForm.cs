@@ -103,9 +103,9 @@ public class UITaskForm : UIFormBase
 
     private void OnBtnDetailClick(int id)
     {
-        TaskEntity entity = GameEntry.DataTable.DataTableManager.TaskDBModel.Get(id);
-        txtTaskName.text = GameEntry.Localization.GetString(entity.Name);
-        txtTaskDesc.text = GameEntry.Localization.GetString(entity.Content);
-        txtAwardMoney.text = "100";
+        // TaskEntity entity = GameEntry.DataTable.DataTableManager.TaskDBModel.Get(id);
+        // txtTaskName.text = GameEntry.Localization.GetString(entity.Name);
+        // txtTaskDesc.text = GameEntry.Localization.GetString(entity.Content);
+        // txtAwardMoney.text = "100";
     }
 }

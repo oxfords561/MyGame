@@ -19,7 +19,7 @@ public class TestProcedure : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.B))
         {
-            GameEntry.UI.OpenUIForm(UIFormId.UI_Task);
+            // GameEntry.UI.OpenUIForm(UIFormId.UI_Task);
         }
     }
 }

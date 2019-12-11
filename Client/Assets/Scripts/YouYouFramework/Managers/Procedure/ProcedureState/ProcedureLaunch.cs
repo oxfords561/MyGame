@@ -1,8 +1,4 @@
-//===================================================
-//作    者：边涯  http://www.u3dol.com
-//创建时间：
-//备    注：
-//===================================================
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +46,7 @@ namespace YouYou
                 GameEntry.Data.SysDataManager.CurrChannelConfig.IsOpenTD = int.Parse(config["IsOpenTD"].ToString()) == 1;
 
                 GameEntry.Log(LogCategory.Resource, "RealSourceUrl=>" + GameEntry.Data.SysDataManager.CurrChannelConfig.RealSourceUrl);
-                GameEntry.Procedure.ChangeState(ProcedureState.CheckVersion);
+                //GameEntry.Procedure.ChangeState(ProcedureState.CheckVersion);
             }
         }
 

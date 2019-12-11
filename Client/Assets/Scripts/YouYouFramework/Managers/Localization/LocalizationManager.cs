@@ -14,12 +14,13 @@ namespace YouYou
         /// <returns></returns>
         public string GetString(string key, params object[] args)
         {
-            string value = null;
-            if (GameEntry.DataTable.DataTableManager.LocalizationDBModel.LocalizationDic.TryGetValue(key, out value))
-            {
-                return string.Format(value, args);
-            }
-            return value;
+            // string value = null;
+            // if (GameEntry.DataTable.DataTableManager.LocalizationDBModel.LocalizationDic.TryGetValue(key, out value))
+            // {
+            //     return string.Format(value, args);
+            // }
+            // return value;
+            return "";
         }
     }
 }

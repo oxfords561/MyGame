@@ -328,7 +328,7 @@ namespace YouYou
                 {
                     GameEntry.Log(LogCategory.Resource, "可写区资源版本号和CDN资源版本号一致");
                     //一致 进入预加载流程
-                    GameEntry.Procedure.ChangeState(ProcedureState.Preload);
+                    //GameEntry.Procedure.ChangeState(ProcedureState.Preload);
                 }
                 else
                 {
@@ -539,7 +539,7 @@ namespace YouYou
             GameEntry.Pool.EnqueueClassObject(m_DownloadingParams);
 
             //进入预加载流程
-            GameEntry.Procedure.ChangeState(ProcedureState.Preload);
+            //GameEntry.Procedure.ChangeState(ProcedureState.Preload);
         }
         #endregion
 
