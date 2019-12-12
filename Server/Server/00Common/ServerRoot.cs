@@ -1,5 +1,8 @@
 ﻿/****************************************************
-	文件：ServerRoot.cs	
+	文件：ServerRoot.cs
+	作者：Plane
+	邮箱: 1785275942@qq.com
+	日期：2018/12/07 4:36   	
 	功能：服务器初始化
 *****************************************************/
 
@@ -25,7 +28,7 @@ public class ServerRoot {
         //TimerSvc.Instance.Init();
 
         //业务系统层
-        LoginSys.Instance.Init();
+        //LoginSys.Instance.Init();
         //GuideSys.Instance.Init();
         //StrongSys.Instance.Init();
         //ChatSys.Instance.Init();

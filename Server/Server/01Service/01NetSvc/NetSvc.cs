@@ -33,8 +33,8 @@ public class NetSvc {
     private Queue<MsgPack> msgPackQue = new Queue<MsgPack>();
 
     public void Init() {
-        //PESocket<ServerSession, GameMsg> server = new PESocket<ServerSession, GameMsg>();
-        //server.StartAsServer(SrvCfg.srvIP, SrvCfg.srvPort);
+        PESocket<ServerSession, GameMsg> server = new PESocket<ServerSession, GameMsg>();
+        server.StartAsServer(SrvCfg.srvIP, SrvCfg.srvPort);
 
         PECommon.Log("NetSvc Init Done.");
     }
@@ -48,42 +48,42 @@ public class NetSvc {
     public void Update() {
         if (msgPackQue.Count > 0) {
             //PECommon.Log("QueCount:" + msgPackQue.Count);
-            //lock (obj) {
-            //    MsgPack pack = msgPackQue.Dequeue();
-            //    HandOutMsg(pack);
-            //}
+            lock (obj) {
+                MsgPack pack = msgPackQue.Dequeue();
+                HandOutMsg(pack);
+            }
         }
     }
 
     private void HandOutMsg(MsgPack pack) {
-        //switch ((CMD)pack.msg.cmd) {
-        //    case CMD.ReqLogin:
-        //        LoginSys.Instance.ReqLogin(pack);
-        //        break;
-        //    case CMD.ReqRename:
-        //        LoginSys.Instance.ReqRename(pack);
-        //        break;
-        //    case CMD.ReqGuide:
-        //        GuideSys.Instance.ReqGuide(pack);
-        //        break;
-        //    case CMD.ReqStrong:
-        //        StrongSys.Instance.ReqStrong(pack);
-        //        break;
-        //    case CMD.SndChat:
-        //        ChatSys.Instance.SndChat(pack);
-        //        break;
-        //    case CMD.ReqBuy:
-        //        BuySys.Instance.ReqBuy(pack);
-        //        break;
-        //    case CMD.ReqTakeTaskReward:
-        //        TaskSys.Instance.ReqTakeTaskReward(pack);
-        //        break;
-        //    case CMD.ReqFBFight:
-        //        FubenSys.Instance.ReqFBFight(pack);
-        //        break;
-        //    case CMD.ReqFBFightEnd:
-        //        FubenSys.Instance.ReqFBFightEnd(pack);
-        //        break;
-        //}
+        switch ((CMD)pack.msg.cmd) {
+            case CMD.ReqLogin:
+                LoginSys.Instance.ReqLogin(pack);
+                break;
+            case CMD.ReqRename:
+                LoginSys.Instance.ReqRename(pack);
+                break;
+            case CMD.ReqGuide:
+                GuideSys.Instance.ReqGuide(pack);
+                break;
+            case CMD.ReqStrong:
+                StrongSys.Instance.ReqStrong(pack);
+                break;
+            case CMD.SndChat:
+                ChatSys.Instance.SndChat(pack);
+                break;
+            case CMD.ReqBuy:
+                BuySys.Instance.ReqBuy(pack);
+                break;
+            case CMD.ReqTakeTaskReward:
+                TaskSys.Instance.ReqTakeTaskReward(pack);
+                break;
+            case CMD.ReqFBFight:
+                FubenSys.Instance.ReqFBFight(pack);
+                break;
+            case CMD.ReqFBFightEnd:
+                FubenSys.Instance.ReqFBFightEnd(pack);
+                break;
+        }
     }
 }

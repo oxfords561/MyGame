@@ -51,289 +51,105 @@
      <Compile Include="Assets\3rdParty\DOTween\Modules\DOTweenModuleUI.cs" />
      <Compile Include="Assets\3rdParty\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\3rdParty\DOTween\Modules\DOTweenModuleUtils.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\01_Helloworld\Helloworld.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\04_LuaObjectOrented\InvokeLua.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\05_NoGc\NoGc.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\06_Coroutine\Coroutine_Runner.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\06_Coroutine\CoroutineTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\07_AsyncTest\AsyncTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\07_AsyncTest\MessageBox.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\08_Hotfix\HotfixTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\08_Hotfix\HotfixTest2.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\08_Hotfix\StatefullTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\09_GenericMethod\Foo.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\09_GenericMethod\GenericMethodExample.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\10_SignatureLoader\SignatureLoaderTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\11_RawObject\RawObjectTest.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\12_ReImplementInLua\ReImplementInLua.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Examples\ExampleGenConfig.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\CodeEmit.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\CopyByValue.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\DelegateBridge.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\GenAttributes.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\GenericDelegateBridge.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\InternalGlobals.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaBase.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaDLL.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaEnv.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaException.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaFunction.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\LuaTable.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\MethodWarpsCache.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\ObjectCasters.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\ObjectPool.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\ObjectTranslator.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\ObjectTranslatorPool.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\RawObject.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\SignatureLoader.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\StaticLuaCallbacks.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\TemplateEngine\TemplateEngine.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\TypeExtensions.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Src\Utils.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Tutorial\CSharpCallLua\CSCallLua.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Tutorial\LoadLuaScript\ByFile\ByFile.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Tutorial\LoadLuaScript\ByString\ByString.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Tutorial\LoadLuaScript\Loader\CustomLoader.cs" />
-     <Compile Include="Assets\3rdParty\XLua\Tutorial\LuaCallCSharp\LuaCallCs.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\CreationExample.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\DeleteAndCreateInSameFrame.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\InstanceHandlerDelegateExample.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\OnCreatedDelegateExample.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\OnSpawnedExample.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\ParticleWaitTest.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\ReallySimpleAudioSpawner.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\ReallySimpleParticleSpawner.cs" />
-     <Compile Include="Assets\PoolManagerExampleFiles\Scripts\SimpleSpawner.cs" />
-     <Compile Include="Assets\Scripts\Procedure\ProcedureBattle.cs" />
-     <Compile Include="Assets\Scripts\Procedure\ProcedureLoad.cs" />
-     <Compile Include="Assets\Scripts\Procedure\ProcedureLogin.cs" />
-     <Compile Include="Assets\Scripts\Procedure\ProcedureMainCity.cs" />
-     <Compile Include="Assets\Scripts\Procedure\ProcedureRoot.cs" />
-     <Compile Include="Assets\Scripts\Test\ReqLoginProto.cs" />
-     <Compile Include="Assets\Scripts\Test\RspLoginProto.cs" />
-     <Compile Include="Assets\Scripts\Test\TestProto.cs" />
-     <Compile Include="Assets\Scripts\Test\TestProto2.cs" />
-     <Compile Include="Assets\Scripts\UILoading.cs" />
-     <Compile Include="Assets\Scripts\UILogin.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\AutoLoadTexture.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\AutoNumberAnimation.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\PageView.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\UIMultiScroller.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\UIMultiScrollIndex.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\UIScroller.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\UIScrollIndex.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\UISelectRoleDragView.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\YouYouImage.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Component\YouYouText.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\DataComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\DataTableComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\DownloadComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\EventComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\FsmComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\HttpComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\LocalizationComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\LuaComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\PoolComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\ProcedureComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\ResourceComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\SceneComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\SettingComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\SocketComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\TimeComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Components\UIComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\BaseActionFunc.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\BaseParams.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\IUpdateComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\MMO_MemoryStream.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\SafeInteger.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarBool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarByte.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarBytes.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarColor.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarFloat.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarGameObject.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\Variable.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VariableBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarInt.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarLong.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarString.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\Variable\VarTransform.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\YouYouBaseComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Core\YouYouComponent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\GameEntry.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\CommonEnum.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\ConstDefine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\DataTable\DataTableDBModelBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\DataTable\DataTableEntityBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\DataTable\DataTableManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Download\DownloadManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Download\DownloadRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Event\CommonEvent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Event\CommonEventId.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Event\EventManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Event\SocketEvent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Event\SysEventId.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Fsm\Fsm.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Fsm\FsmBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Fsm\FsmManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Fsm\FsmState.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Http\HttpCallBackArgs.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Http\HttpManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Http\HttpRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Localization\LocalizationDBModel.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Localization\LocalizationManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Lua\LuaForm.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Lua\LuaGenConfig.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Lua\LuaManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\ManagerBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\ClassObjectPool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\GameObjectPool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\GameObjectPoolEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\PoolManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\ResourceEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Pool\ResourcePool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureChangeScene.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureCheckVersion.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureEnterGame.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureGameLevel.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureLaunch.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureLogOn.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedurePreload.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureSelectRole.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Procedure\ProcedureState\ProcedureWorldMap.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\AssetBundleInfoEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\AssetBundleLoaderRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\AssetDependsEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\AssetEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\AssetLoaderRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\LocalAssetsManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\MainAssetLoaderRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\ResourceLoaderManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\ResourceManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Resource\StreamingAssetsManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Scene\SceneLoaderRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Scene\YouYouSceneManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Socket\IProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Socket\SocketManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Socket\SocketTcpRoutine.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Time\TimeAction.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\Time\TimeManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\UI\UIFormBase.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\UI\UIGroup.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\UI\UILayer.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\UI\UIManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Managers\UI\UIPool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\CusUserData.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestAessetBundle.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestAsync.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestDownload.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestEvent.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestLua.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestMD5.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestPool.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestProcedure.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestScene.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestSocket.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestTime.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Test\TestUI.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\Crc16.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\DeviceUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\EncryptUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\GameObjectUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\GameObjectUtilEx.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\GameUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\IOUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\SecurityUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\StringUtil.cs" />
-     <Compile Include="Assets\Scripts\YouYouFramework\Utils\ZlibHelper.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Backpack_GoodsChangeReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Backpack_SearchProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Backpack_SearchReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_EquipPutProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_EquipPutReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_SearchEquipDetailProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_SearchEquipDetailReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_SellToSysProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_SellToSysReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_UseItemProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Goods_UseItemReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\ProtoCodeDef.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_CreateRoleProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_CreateRoleReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_DeleteRoleProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_DeleteRoleReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_EnterGameProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_EnterGameReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_LogOnGameServerProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_LogOnGameServerReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_SelectRoleInfoProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\RoleOperation_SelectRoleInfoReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Shop_BuyProductProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Shop_BuyProductReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\System_GameServerConfigReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\System_HeartbeatProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\System_HeartbeatReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\System_SendLocalTimeProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\System_ServerTimeReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Task_SearchTaskProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\Proto\Task_SearchTaskReturnProto.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Backpack_GoodsChangeReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Backpack_SearchReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Goods_EquipPutReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Goods_SearchEquipDetailReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Goods_SellToSysReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Goods_UseItemReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\RoleOperation_CreateRoleReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\RoleOperation_DeleteRoleReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\RoleOperation_EnterGameReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\RoleOperation_LogOnGameServerReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\RoleOperation_SelectRoleInfoReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Shop_BuyProductReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\SocketProtoListener.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\System_GameServerConfigReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\System_HeartbeatReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\System_ServerTimeReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\Data\ProtoHandler\Task_SearchTaskReturnHandler.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\CacheDataManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\DataEntity\ChannelConfigEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\DataEntity\ServerTaskEntity.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\PVEMapDataManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\SysDataManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\DataManager\UserDataManager.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\UI\UIForm\UICheckVersionForm.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\UI\UIForm\UITaskForm.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\UI\UIForm\UITaskFormItemView.cs" />
-     <Compile Include="Assets\Scripts\YouYouScript\UI\UIFormId.cs" />
-     <None Include="Assets\3rdParty\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
-     <None Include="Assets\3rdParty\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Extension\QUICameraUtil.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Extension\UIPointerDownEventListener.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Extension\UIPointerUpEventListener.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Extension\UIRectTransform.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Extension\UISpriteAnimation.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIComponent.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIDefaultPanel.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIElement.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIElementList.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIScrollPage.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Component\UIScrollPageMark.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Res\DefaultPanelLoader.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Res\IPanelLoader.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\Bind.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\IMark.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\IPanel.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\UIManager.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\UIMark.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\UIPanel.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\UIStack.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\System\ViewController.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\UIPanelTester.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Util\CollisionTriggerListener.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Util\UIEffectHelper.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\1.UI\Script\Util\UIEventListener.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\Framework.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\IManager.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\QMgrBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\QMonoBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\QMsg.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\QMsgCenter.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\2.ManagerOfManagers\QMsgSpan.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\3.Guide\Scripts\CircleGuideCtrl.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\3.Guide\Scripts\GuideCtrl.cs" />
+     <Compile Include="Assets\QFramework\Framework\3.UIKit\3.Guide\Scripts\RectGuideCtrl.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\DragMe.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\Empty4Raycast.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\Hide.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\Math.cs" />
+     <Compile Include="Assets\QFramework\Framework\4.ScriptCollection\ParticleScaler.cs" />
+     <Compile Include="Assets\QFramework\Framework\5.ShaderLib\Scripts\PostFXBehaviour.cs" />
+     <Compile Include="Assets\QFramework\Framework\6.EditorToolKit\Attribute\ButtonAttribute.cs" />
+     <Compile Include="Assets\QFramework\Framework\6.EditorToolKit\Attribute\ButtonExAttribute.cs" />
+     <Compile Include="Assets\QFramework\Framework\6.EditorToolKit\Attribute\ShowIfAndAttribute.cs" />
+     <Compile Include="Assets\QFramework\Framework\6.EditorToolKit\Attribute\ShowIfAttribute.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\BinaryHeap.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\IBinaryHeapElement.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\TimeItem.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\Timer.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\TimerHelper.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\TimerManager.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\0.Timer\TimeUtil.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\AudioManager.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\AudioPlayer.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\AudioUnit.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\CoroutineCommand\AudioSoundNode.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\CoroutineCommand\AudioVoiceNode.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AddRetainAudioMsg.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AudioMusicMsg.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AudioSoundMsg.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AudioVoiceMsg.cs" />
+     <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\RemoteRetainAudioMsg.cs" />
+     <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
+     <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
+     <Compile Include="Assets\Scripts\System\GameRoot.cs" />
+     <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\UIGrabPass.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Framework3D.cginc" />
      <None Include="Assets\Compond\MakeChar\Shader\PlayerShader.shader" />
-     <None Include="Assets\3rdParty\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
      <None Include="Assets\Resources\ResCfgs\taskreward.xml" />
-     <None Include="Assets\3rdParty\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
-     <None Include="Assets\3rdParty\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Feature.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Framework3D_Terrain.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Framework3D_DefaultRender.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Common.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Noise.cginc" />
+     <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\UI.cginc" />
+     <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\PostFX.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\SDF.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Framework2D.cginc" />
      <None Include="Assets\Resources\ResCfgs\rdname.xml" />
      <None Include="Assets\Compond\Shader\MonsterShader.shader" />
-     <None Include="Assets\3rdParty\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
      <None Include="Assets\Resources\ResCfgs\monster.xml" />
-     <None Include="Assets\3rdParty\XLua\Resources\xlua\util.lua.txt" />
      <None Include="Assets\Compond\MakeChar\Shader\MogoFakeLight.shader" />
      <None Include="Assets\Compond\Shader\MogoSkybox.shader" />
-     <None Include="Assets\3rdParty\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Hash.cginc" />
      <None Include="Assets\Resources\ResCfgs\strong.xml" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Math.cginc" />
+     <None Include="Assets\QFramework\Framework\3.UIKit\3.Guide\Shader\CircleGuideShader.shader" />
      <None Include="Assets\3rdParty\DOTween\readme.txt" />
      <None Include="Assets\Resources\ResCfgs\guide.xml" />
      <None Include="Assets\Compond\MakeScene\SceneShader\MogoTransparentDiffuse.shader" />
-     <None Include="Assets\3rdParty\XLua\Resources\perf\profiler.lua.txt" />
+     <None Include="Assets\QFramework\Framework\3.UIKit\3.Guide\Shader\RectGuideShader.shader" />
+     <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\GaussianBlur.cginc" />
+     <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\FBM.cginc" />
      <None Include="Assets\Compond\Shader\Mul-skybox.shader" />
      <None Include="Assets\Resources\ResCfgs\skillmove.xml" />
-     <None Include="Assets\3rdParty\XLua\Resources\perf\memory.lua.txt" />
+     <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\Gray.cginc" />
      <None Include="Assets\Resources\ResCfgs\skillaction.xml" />
-     <None Include="Assets\3rdParty\XLua\CHANGELOG.txt" />
      <None Include="Assets\Resources\ResCfgs\map.xml" />
-     <None Include="Assets\3rdParty\XLua\Resources\tdr\tdr.lua.txt" />
      <None Include="Assets\Resources\ResCfgs\skill.xml" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/GitProjects/MyGame/Client/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -548,17 +364,14 @@
  <Reference Include="DOTween">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/3rdParty/DOTween/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="LitJson">
- <HintPath>D:/GitProjects/MyGame/Client/Assets/Plugins/LitJson.dll</HintPath>
- </Reference>
- <Reference Include="zlib.net">
- <HintPath>D:/GitProjects/MyGame/Client/Assets/Plugins/zlib.net.dll</HintPath>
- </Reference>
  <Reference Include="PEProtocol">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PEProtocol.dll</HintPath>
  </Reference>
  <Reference Include="PESocket">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PESocket.dll</HintPath>
+ </Reference>
+ <Reference Include="QFramework.Log">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/QFramework/Framework/1.Core/Log/QFramework.Log.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -916,9 +729,53 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{079D398E-4AFC-CD7E-7881-F923D075EBD1}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
+    <ProjectReference Include="QFramework.TypeEventSystem.csproj">
+      <Project>{38578A92-BB06-AB00-2C4A-42CB942206C9}</Project>
+      <Name>QFramework.TypeEventSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.EventSystem.csproj">
+      <Project>{59753FCF-7C19-9A5C-5BB1-B59E992E9951}</Project>
+      <Name>QFramework.EventSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.RefCounter.csproj">
+      <Project>{E9DDB2A4-2F11-881B-8C53-16C261BA853E}</Project>
+      <Name>QFramework.RefCounter</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.Pool.csproj">
+      <Project>{C26B89DF-F62D-EF0E-2673-F3630B5843DD}</Project>
+      <Name>QFramework.Pool</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.Singleton.csproj">
+      <Project>{D86478B7-C75D-49F6-8505-3401F13DC9AC}</Project>
+      <Name>QFramework.Singleton</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.ResKit.csproj">
+      <Project>{EE2F2547-558D-EB8E-AF07-B99614DAE845}</Project>
+      <Name>QFramework.ResKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.FSM.csproj">
+      <Project>{A758504A-110C-5B52-A674-23C9D2F0A52F}</Project>
+      <Name>QFramework.FSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.Device.csproj">
+      <Project>{D1A1ED93-8CDB-0591-FD11-2A936B991069}</Project>
+      <Name>QFramework.Device</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.PackageKit.csproj">
+      <Project>{23274B13-5155-A47C-4932-AA3939454E7A}</Project>
+      <Name>QFramework.PackageKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.ActionKit.csproj">
+      <Project>{94B6D9BA-9F2E-5A33-2DF7-1554D0F582D4}</Project>
+      <Name>QFramework.ActionKit</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.CSharpExtension.csproj">
+      <Project>{F5D40752-3B31-2B60-3F34-7DD2DD08C63D}</Project>
+      <Name>QFramework.CSharpExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="QFramework.IOC.csproj">
+      <Project>{5AB3A4AC-02EA-517E-3352-2933EDF05D7D}</Project>
+      <Name>QFramework.IOC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

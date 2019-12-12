@@ -33,27 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="00Common\Crc16.cs" />
-    <Compile Include="00Common\EventDispatcher.cs" />
-    <Compile Include="00Common\SecurityUtil.cs" />
     <Compile Include="00Common\ServerRoot.cs" />
     <Compile Include="00Common\ServerStart.cs" />
-    <Compile Include="00Common\Singleton.cs" />
-    <Compile Include="00Common\ZlibHelper.cs" />
-    <Compile Include="00Common\zlib_NET_104\Adler32.cs" />
-    <Compile Include="00Common\zlib_NET_104\Deflate.cs" />
-    <Compile Include="00Common\zlib_NET_104\InfBlocks.cs" />
-    <Compile Include="00Common\zlib_NET_104\InfCodes.cs" />
-    <Compile Include="00Common\zlib_NET_104\Inflate.cs" />
-    <Compile Include="00Common\zlib_NET_104\InfTree.cs" />
-    <Compile Include="00Common\zlib_NET_104\StaticTree.cs" />
-    <Compile Include="00Common\zlib_NET_104\SupportClass.cs" />
-    <Compile Include="00Common\zlib_NET_104\Tree.cs" />
-    <Compile Include="00Common\zlib_NET_104\ZInputStream.cs" />
-    <Compile Include="00Common\zlib_NET_104\Zlib.cs" />
-    <Compile Include="00Common\zlib_NET_104\ZOutputStream.cs" />
-    <Compile Include="00Common\zlib_NET_104\ZStream.cs" />
-    <Compile Include="00Common\zlib_NET_104\ZStreamException.cs" />
     <Compile Include="01Service\01NetSvc\NetSvc.cs" />
     <Compile Include="01Service\01NetSvc\ServerSession.cs" />
     <Compile Include="01Service\02CfgSvc\CfgSvc.cs" />
@@ -69,34 +50,27 @@
     <Compile Include="02System\08FubenSys\FubenSys.cs" />
     <Compile Include="03Cache\CacheSvc.cs" />
     <Compile Include="04DB\DBMgr.cs" />
-    <Compile Include="00Common\IProto.cs" />
-    <Compile Include="00Common\MMO_MemoryStream.cs" />
-    <Compile Include="05Proto\ReqLoginProto.cs" />
-    <Compile Include="05Proto\RspLoginProto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SocketHelper.cs" />
-    <Compile Include="Test\TestProto.cs" />
-    <Compile Include="Test\TestProto2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PEProtocol\PEProtocol.csproj">
+      <Project>{6894b1fe-c073-49a8-ba17-260dc23213aa}</Project>
+      <Name>PEProtocol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>Libs\MySql.Data.dll</HintPath>
+      <HintPath>..\Libs\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="PESocket">
-      <HintPath>Libs\PESocket.dll</HintPath>
+      <HintPath>..\Libs\PESocket.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PEProtocol\PEProtocol.csproj">
-      <Project>{b339bbef-bc61-4870-a281-6a8f5ba33a2a}</Project>
-      <Name>PEProtocol</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
