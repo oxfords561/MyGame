@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 2833841120
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: loadingwnd_prefab
+      Dependencies: {}
+    Info_1:
+      Name: loginwnd_prefab
+      Dependencies: {}
+    Info_2:
+      Name: scenelogin_unity
+      Dependencies: {}

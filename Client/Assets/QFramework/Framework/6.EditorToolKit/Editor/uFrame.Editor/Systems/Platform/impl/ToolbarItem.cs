@@ -4,7 +4,6 @@ namespace QF.GraphDesigner
 {
     public class ToolbarItem
     {
-        public ICommand Command { get; set; }
         public ToolbarPosition Position { get; set; }
         public int Order { get; set; }
         public bool IsDropdown { get; set; }

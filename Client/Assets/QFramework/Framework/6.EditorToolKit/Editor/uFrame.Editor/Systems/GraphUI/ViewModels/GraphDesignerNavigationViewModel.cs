@@ -63,20 +63,13 @@ namespace QF.GraphDesigner
                     Title = tab.Title + (tab.IsDirty ? "*" : string.Empty),
                     NavigationAction = x =>
                     {
-                        InvertApplication.Execute(new LambdaCommand("Change Current Graph", () =>
-                        {
-                            WorkspaceService.CurrentWorkspace.CurrentGraphId = tab1.Identifier;
-                            //DesignerWindow.SwitchDiagram(WorkspaceService.CurrentWorkspace.Graphs.FirstOrDefault(p => p.Identifier == tab.Identifier));
-                        }));
+
                         
 
                     },
                     CloseAction = x =>
                     {
-                        InvertApplication.Execute(new LambdaCommand("Close Graph", () =>
-                        {
-                            this.DiagramViewModel.CurrentRepository.RemoveAll<WorkspaceGraph>(p => p.GraphId == tab1.Identifier);
-                        } ));
+
                     }
                 };
 
@@ -106,7 +99,6 @@ namespace QF.GraphDesigner
                     State = DiagramViewModel.GraphData != null && DiagramViewModel.GraphData.CurrentFilter == filter ? NavigationItemState.Current : NavigationItemState.Regular,
                     NavigationAction = x =>
                     {
-                        InvertApplication.Execute(new LambdaCommand("Back", () => { DiagramViewModel.GraphData.PopToFilter(filter1); }));
                     }       
                 };
 

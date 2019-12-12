@@ -11,12 +11,7 @@ namespace Invert.Data
             if (to == null) return false;
             return record.Identifier == to.Identifier || record.ForeignKeys.Contains(to.Identifier);
         }
-        public static TType Copy<TType>(this TType record) where TType : class, IDataRecord
-        {
-            var result = InvertJsonExtensions.DeserializeObject<TType>((string)InvertJsonExtensions.SerializeObject(record).ToString()) as TType;
-            result.Identifier = Guid.NewGuid().ToString();
-            return result; 
-        }
+
 
         public static void Changed<TType>(this IDataRecord record, string propertyName,ref TType beforeValue, TType value)
         {

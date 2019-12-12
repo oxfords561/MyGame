@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using QF.GraphDesigner;
-using Invert.uFrame.Editor;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;

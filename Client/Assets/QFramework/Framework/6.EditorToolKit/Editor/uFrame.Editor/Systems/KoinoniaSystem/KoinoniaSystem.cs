@@ -5,9 +5,7 @@ using System.Linq;
 using System.Threading;
 using QF.GraphDesigner;
 //using ICSharpCode.SharpZipLib.Zip;
-using QF.GraphDesigner.Unity.KoinoniaSystem.Drawers;
 using QF.GraphDesigner.Unity.KoinoniaSystem.Extensions;
-using QF.GraphDesigner.Unity.WindowsPlugin;
 using Invert.Data;
 using QF.GraphDesigner.Unity.KoinoniaSystem.Classes;
 using QF.GraphDesigner.Unity.KoinoniaSystem.Commands;
@@ -19,18 +17,11 @@ using QF;
 using QFramework;
 using UnityEditor;
 using UnityEngine;
-using MessageType = QF.GraphDesigner.Unity.WindowsPlugin.MessageType;
 
 namespace QF.GraphDesigner.Unity.KoinoniaSystem
 {
 
-    public class KoinoniaSystem : DiagramPlugin, 
-        IExecuteCommand<QueueRevisionForInstallCommand>,
-        IExecuteCommand<QueueRevisionForUninstallCommand>,
-        IExecuteCommand<PingServerCommand>,
-        IExecuteCommand<RefreshFrontPagePackagesCommand>,
-        IExecuteCommand<RunQueuedOperationsCommand>,
-        IExecuteCommand<SelectPackageCommand>
+    public class KoinoniaSystem 
     {
 
         #region Fields
@@ -51,15 +42,7 @@ namespace QF.GraphDesigner.Unity.KoinoniaSystem
 
         #region Properties
 
-        public override bool Enabled
-        {
-            get { return false; }
-        }
 
-        public override decimal LoadPriority
-        {
-            get { return 9999; }
-        }
 
         public UFramePackageDescriptor SelectedPackage { get; set; }
 
@@ -124,26 +107,9 @@ namespace QF.GraphDesigner.Unity.KoinoniaSystem
 
         #endregion
 
-        public override void Initialize(QFrameworkContainer container)
-        {
-            var typeDatabase = new TypeDatabase(new JsonRepositoryFactory(Path.Combine(Application.dataPath, "../uFrame")));
-            container.RegisterInstance<IRepository>(typeDatabase, "Settings");
-            container.RegisterInstance<IDesctiptorsService>(new DescriptorsService(typeDatabase));
-        }
-        public override void Loaded(QFrameworkContainer container)
-        {
-            base.Loaded(container);
-            UpdateAvailability();
-            ApplicationPath = Application.dataPath;
-        }
-
         public void UpdateAvailability()
         {
-            InvertApplication.ExecuteInBackground(new PingServerCommand()
-            {
-            //    Server = "http://invertgamestudios.com"
-                Server = "http://google.com"
-            });
+
 
         }
         public void DownloadAndExtractPackage(UFramePackageDescriptor package, UFramePackageRevisionDescriptor revision)

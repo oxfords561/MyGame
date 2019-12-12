@@ -81,13 +81,7 @@ namespace QF.GraphDesigner
         public void ShowSelectionListWindow()
         {
             EndEditing();
-            InvertApplication.Execute(new SelectTypeCommand()
-            {
-                PrimitiveOnly = false,
-                AllowNone = false,
-                IncludePrimitives = true,
-                Item = this.DataObject as ITypedItem,
-            });
+
             // TODO 2.0 Typed Item Selection Window
             // This was in the drawer re-implement
 

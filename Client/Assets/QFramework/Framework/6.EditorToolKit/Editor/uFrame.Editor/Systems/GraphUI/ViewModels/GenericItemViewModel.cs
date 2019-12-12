@@ -1,5 +1,4 @@
 using System.Linq;
-using Invert.uFrame.Editor.ViewModels;
 
 namespace QF.GraphDesigner
 {

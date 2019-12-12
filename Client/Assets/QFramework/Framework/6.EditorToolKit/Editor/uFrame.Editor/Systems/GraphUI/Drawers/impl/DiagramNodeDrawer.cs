@@ -247,11 +247,7 @@ namespace QF.GraphDesigner
 
                 platform.DoButton(rect.Scale(scale), string.Empty, style, () =>
                 {
-                    InvertApplication.Execute(new LambdaCommand("Toggle Collapse",() =>
-                    {
-                        ViewModel.IsCollapsed = !ViewModel.IsCollapsed;
-                        Dirty = true;
-                    }) );
+
                 });
             }
 
@@ -298,11 +294,6 @@ namespace QF.GraphDesigner
                         platform.DoButton(new Rect(rect.x + rect.width + 5, rect.y, 75, 25).Scale(Scale), "Auto Fix", null,
                             () =>
                             {
-                                InvertApplication.Execute(new LambdaCommand("Auto Fix",() =>
-                                {
-                                    keyValuePair.AutoFix();
-                                }));
-                                
                             });
                     }
                     

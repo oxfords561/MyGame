@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using QF;
@@ -10,7 +9,6 @@ namespace QF.GraphDesigner
 {
     public static class InvertApplication
     {
-        public static bool IsTestMode { get; set; }
         public static IDebugLogger Logger
         {
             get { return _logger ?? (_logger = new DefaultLogger()); }
@@ -18,7 +16,6 @@ namespace QF.GraphDesigner
         }
 
         private static QFrameworkContainer _container;
-        private static ICorePlugin[] _plugins;
         private static IDebugLogger _logger;
         private static Dictionary<Type, IEventManager> _eventManagers;
         private static List<Assembly> _typeAssemblies;
@@ -47,19 +44,6 @@ namespace QF.GraphDesigner
             }
         }
 
-        public static void LoadPluginsFolder(string pluginsFolder)
-        {
-            if (!Directory.Exists(pluginsFolder))
-            {
-                Directory.CreateDirectory(pluginsFolder);
-            }
-            foreach (var plugin in Directory.GetFiles(pluginsFolder, "*.dll"))
-            {
-                var assembly = Assembly.LoadFrom(plugin);
-                assembly = AppDomain.CurrentDomain.Load(assembly.GetName());
-                InvertApplication.CachedAssembly(assembly);
-            }
-        }
         public static QFrameworkContainer Container
         {
             get
@@ -120,7 +104,7 @@ namespace QF.GraphDesigner
                     }
                     catch (Exception ex)
                     {
-                        InvertApplication.Log(ex.Message);
+                        Log(ex.Message);
                     }
                 }
                 foreach (var item in items)
@@ -167,30 +151,6 @@ namespace QF.GraphDesigner
             }
             return null;
         }
-        public static Type FindTypeByNameExternal(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return null;
-
-            foreach (var assembly in CachedAssemblies)
-            {
-                try
-                {
-                    foreach (var item in assembly.GetTypes())
-                    {
-                        if (item.Name == name)
-                            return item;
-                        if (item.FullName == name)
-                            return item;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    continue;
-                }
-
-            }
-            return null;
-        }
 
         public static Type FindRuntimeType(string name)
         {
@@ -217,77 +177,13 @@ namespace QF.GraphDesigner
             return null;
         }
 
-        
 
-        public static ICorePlugin[] Plugins
-        {
-            get
-            {
-                return _plugins ?? (_plugins = Container.ResolveAll<ICorePlugin>().ToArray());
-            }
-            set { _plugins = value; }
-        }
-        public static int MainThreadId
-        {
-            get; set;
-        }
-        public static bool IsMainThread
-        {
-            get { return System.Threading.Thread.CurrentThread.ManagedThreadId == MainThreadId; }
-        }
         private static void InitializeContainer(IQFrameworkContainer container)
         {
-            _plugins = null;
-            container.RegisterInstance<IQFrameworkContainer>(container);
-            var pluginTypes = GetDerivedTypes<ICorePlugin>(false, false).ToArray();
-            // Load all plugins
-            foreach (var diagramPlugin in pluginTypes)
-            {
-                if (pluginTypes.Any(p => p.BaseType == diagramPlugin)) continue;
-                var pluginInstance = Activator.CreateInstance((Type) diagramPlugin) as ICorePlugin;
-                if (pluginInstance == null) continue;
-                container.RegisterInstance(pluginInstance, diagramPlugin.Name, false);
-                container.RegisterInstance(pluginInstance.GetType(), pluginInstance);
-                if (pluginInstance.Enabled)
-                {
-                   
-                    foreach (var item in diagramPlugin.GetInterfaces())
-                    {
-                        ListenFor(item, pluginInstance);
-                    }
-                }
-               
-            }
+            container.RegisterInstance(container);
 
             container.InjectAll();
-
-            foreach (var diagramPlugin in Plugins.OrderBy(p => p.LoadPriority).Where(p=>!p.Ignore))
-            {
-               
-                if (diagramPlugin.Enabled)
-                {
-                    var start = DateTime.Now;
-                    diagramPlugin.Container = Container;
-                    diagramPlugin.Initialize(Container);
-                       
-                }
-                
-               
-            }
-
-            foreach (var diagramPlugin in Plugins.OrderBy(p => p.LoadPriority).Where(p => !p.Ignore))
-            {
             
-                if (diagramPlugin.Enabled)
-                {
-                    var start = DateTime.Now;
-                    container.Inject(diagramPlugin);
-                    diagramPlugin.Loaded(Container); 
-                    diagramPlugin.LoadTime = DateTime.Now.Subtract(start);
-                }
-                
-
-            }
             SignalEvent<ISystemResetEvents>(_=>_.SystemRestarted());
         }
 
@@ -296,37 +192,7 @@ namespace QF.GraphDesigner
             get { return _eventManagers ?? (_eventManagers = new Dictionary<Type, IEventManager>()); }
             set { _eventManagers = value; }
         }
-        public static System.Action ListenFor(Type eventInterface, object listenerObject)
-        {
-            var listener = listenerObject;
-    
-            IEventManager manager;
-            if (!EventManagers.TryGetValue(eventInterface, out manager))
-            {
-                EventManagers.Add(eventInterface, manager = (IEventManager) Activator.CreateInstance(typeof(EventManager<>).MakeGenericType(eventInterface)));
-            }
-            var m = manager as IEventManager;
-            
-            
-            return m.AddListener(listener);
-        }
-        /// <summary>
-        /// Subscribes to a series of related events defined by an interface.
-        /// </summary>
-        /// <typeparam name="TEvents">The interface type the describes the events.</typeparam>
-        /// <param name="listener">The listener that implements the event interface TEvents.</param>
-        public static System.Action ListenFor<TEvents>(TEvents listener) where TEvents : class
-        {
-            IEventManager manager;
-            if (!EventManagers.TryGetValue(typeof (TEvents), out manager))
-            {
-                EventManagers.Add(typeof (TEvents), manager = new EventManager<TEvents>());
-            }
-            var m = manager as EventManager<TEvents>;
-            if (m.Listeners.Contains(listener))
-                return () => m.Listeners.Remove(listener);
-            return m.Subscribe(listener);
-        }
+
         /// <summary>
         /// Subscribes to a series of related events defined by an interface.
         /// </summary>
@@ -363,73 +229,7 @@ namespace QF.GraphDesigner
             var m = manager as EventManager<TEvents>;
             m.Signal(action);
         }
-        public static void Execute(System.Action action)
-        {
-            Execute(new LambdaCommand("Unknown Command", action));
-        }
-        public static void Execute<TCommand>(TCommand command) where TCommand : ICommand
-        {
-            SignalEvent<ICommandExecuting>(_ => _.CommandExecuting(command));
-            try
-            {
-                SignalEvent<IExecuteCommand<TCommand>>(_ => _.Execute(command));
-            }
-            catch (Exception ex)
-            {
-                SignalEvent<INotify>(_=>_.NotifyWithActions(ex.Message,NotificationIcon.Error,new NotifyActionItem()
-                {
-                    Title = "More...",
-                    Action = () =>
-                    {
-                        SignalEvent<IShowExceptionDetails>(__ => __.ShowExceptionDetails(new Problem()
-                        {
-                            Exception = ex
-                        }));
-                    }
-                }));
-#if DEBUG
-                LogException(ex);
-#endif
-            }
-            SignalEvent<ICommandExecuted>(_ => _.CommandExecuted(command));
-        }
-
-        public static BackgroundTask ExecuteInBackground<TCommand>(TCommand command)
-            where TCommand : IBackgroundCommand
-        {
-            SignalEvent<ICommandExecuting>(_ => _.CommandExecuting(command));
-
-            var cmd = new BackgroundTaskCommand()
-            {
-                Command = command,
-                Action = (c) =>
-                {
-                       
-                    SignalEvent<IExecuteCommand<TCommand>>(_ => _.Execute((TCommand)c));
-                       
-                }
-            };
-            SignalEvent<ICommandExecuted>(_ => _.CommandExecuted(command));
-            SignalEvent<IExecuteCommand<BackgroundTaskCommand>>(m=>
-            {
-                m.Execute(cmd);
-            });
-
-            return cmd.Task;
-        } 
-
-        public static void Execute(ICommand command)
-        {
-            SignalEvent<ICommandExecuting>(_ => _.CommandExecuting(command));
-            var type = typeof (IExecuteCommand<>).MakeGenericType(command.GetType());
-            IEventManager manager;
-            if (!EventManagers.TryGetValue(type, out manager))
-            {
-                EventManagers.Add(type, manager = Activator.CreateInstance(typeof(EventManager<>).MakeGenericType(type)) as IEventManager);
-            }
-            manager.Signal(listener => listener.GetType().GetMethod("Execute",new Type[] {command.GetType()}).Invoke(listener, new object[] { command }));
-            SignalEvent<ICommandExecuted>(_ => _.CommandExecuted(command));
-        }
+        
         public static void Log(string s)
         {
 #if DEBUG

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace QF.GraphDesigner.Unity
 {
-    public class UnityPlatform : DiagramPlugin, IPlatformOperations, IDebugLogger
+    public class UnityPlatform : IPlatformOperations, IDebugLogger
     {
 
         //public void ShowFileDialog(string title)

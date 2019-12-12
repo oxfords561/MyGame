@@ -11,16 +11,14 @@ namespace QF.GraphDesigner
     /// <summary>
     /// 这个应该是主要的设计窗口
     /// </summary>
-    public class DesignerWindow : DiagramPlugin,
+    public class DesignerWindow:
         IGraphWindow,
         IDrawUFrameWindow,
-        ICommandExecuted,
         INodeItemEvents,
         IDataRecordInserted,
         IDataRecordRemoved,
         IDataRecordPropertyChanged,
-        IDataRecordManagerRefresh,
-        IToolbarQuery
+        IDataRecordManagerRefresh
     {
         private DesignerViewModel mDesignerViewModel;
 
@@ -31,6 +29,11 @@ namespace QF.GraphDesigner
         public Toolbars Toolbars
         {
             get { return Container.Resolve<Toolbars>(); }
+        }
+        
+        public QFrameworkContainer Container
+        {
+            get { return InvertApplication.Container; }
         }
 
         public IPlatformDrawer Drawer
@@ -101,12 +104,7 @@ namespace QF.GraphDesigner
             get { return mWorkspaceService ?? (mWorkspaceService = InvertGraphEditor.Container.Resolve<WorkspaceService>()); }
             set { mWorkspaceService = value; }
         }
-
-        public override void Loaded(QFrameworkContainer container)
-        {
-            base.Loaded(container);
-            InvertGraphEditor.DesignerWindow = this;
-        }
+        
 
         private bool mShouldProcessInputFromDiagram = true;
 
@@ -135,10 +133,8 @@ namespace QF.GraphDesigner
 
 
                 var modalItems = new List<DesignerWindowModalContent>();
-                Signal<IQueryDesignerWindowModalContent>(_ => _.QueryDesignerWindowModalContent(modalItems));
 
                 var overlayItems = new List<DesignerWindowOverlayContent>();
-                Signal<IQueryDesignerWindowOverlayContent>(_ => _.QueryDesignerWindowOverlayContent(overlayItems));
 
                 //Disable diagram input if any modal content presents or if mouse is over overlay content
                 mShouldProcessInputFromDiagram = !modalItems.Any() && overlayItems.All(i => !i.Drawer.CalculateBounds(diagramRect).Contains(Event.current.mousePosition));
@@ -448,19 +444,6 @@ namespace QF.GraphDesigner
             return false;
         }
 
-        public void CommandExecuted(ICommand command)
-        {
-            if (command is UndoCommand || command is RedoCommand)
-            {
-                refresh = true;
-            }
-            if (refresh)
-            {
-                refresh = false;
-                RefreshContent(); 
-            } 
-        }
-
         public void Renamed(IDiagramNodeItem nodeItem, string editText, string name)
         {
             RefreshContent();
@@ -579,20 +562,6 @@ namespace QF.GraphDesigner
         {
             get { return InvertGraphEditor.Prefs.GetBool("ShowFPSInDiagramDesigner", false); }
             set { InvertGraphEditor.Prefs.SetBool("ShowFPSInDiagramDesigner",value); }
-        }
-
-        public void QueryToolbarCommands(ToolbarUI ui)
-        {
-            ui.AddCommand(new ToolbarItem()
-            {
-                Title = "Toggle FPS",
-                Checked = ShowFPS,
-                Command = new LambdaCommand("Toggle Fps", () =>
-                {
-                    ShowFPS = !ShowFPS;
-                }),
-                Position = ToolbarPosition.BottomRight
-            });
         }
     }
 }

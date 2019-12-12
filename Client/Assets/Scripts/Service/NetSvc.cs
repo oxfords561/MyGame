@@ -7,17 +7,15 @@ using System.Collections.Generic;
 using PENet;
 using PEProtocol;
 using UnityEngine;
+using QFramework;
 
-public class NetSvc : MonoBehaviour {
-    public static NetSvc Instance = null;
+public class NetSvc : MonoSingleton<NetSvc> {
 
     private static readonly string obj = "lock";
     PESocket<ClientSession, GameMsg> client = null;
     private Queue<GameMsg> msgQue = new Queue<GameMsg>();
 
-
     public void InitSvc() {
-        Instance = this;
 
         client = new PESocket<ClientSession, GameMsg>();
         client.SetLog(true, (string msg, int lv) => {

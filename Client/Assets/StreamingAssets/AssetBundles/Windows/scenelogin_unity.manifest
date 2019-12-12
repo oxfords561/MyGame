@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 2498580807
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7b2cda7b1965033f43d4483baf49c156
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e8e5e7a00f26400430d548fda7b5178f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe56e5a3cbd9a564bb69c8eb42b2024c, type: 3}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/ResScenes/SceneLogin.unity
+Dependencies: []

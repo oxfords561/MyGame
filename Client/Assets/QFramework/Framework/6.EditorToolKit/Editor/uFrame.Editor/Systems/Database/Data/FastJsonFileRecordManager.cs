@@ -56,7 +56,6 @@ namespace Invert.Data
             //};
         }
 
-        public FileSystemWatcher Watcher { get; set; }
 
         public Type For { get; set; }
 

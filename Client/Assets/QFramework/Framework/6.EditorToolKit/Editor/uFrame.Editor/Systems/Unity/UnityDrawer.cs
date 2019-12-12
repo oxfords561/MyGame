@@ -437,10 +437,7 @@ namespace QF.GraphDesigner.Unity
                         var graphItem1 = graphItem;
                         menu.AddItem(new SelectionMenuItem(graphItem, () =>
                         {
-                            InvertApplication.Execute(() =>
-                            {
-                                d.Setter(d.DataObject, graphItem1);
-                            });
+
                         }));
                     }
 
@@ -477,10 +474,7 @@ namespace QF.GraphDesigner.Unity
                     }
                     if (Event.current.isKey && Event.current.keyCode == KeyCode.Return)
                     {
-                        InvertApplication.Execute(() =>
-                        {
 
-                        });
                     }
                 }
                 else if (d.InspectorType == InspectorType.TypeSelection)
@@ -629,10 +623,6 @@ namespace QF.GraphDesigner.Unity
 
                     if (EditorGUI.EndChangeCheck())
                     {
-                        InvertApplication.Execute(() =>
-                        {
-                            d.Setter(d.DataObject, d.CachedValue);
-                        });
 
                     }
                 }
@@ -686,20 +676,14 @@ namespace QF.GraphDesigner.Unity
                     var menu = new SelectionMenu();
                     menu.AddItem(new SelectionMenuItem(string.Empty,"[None]", () =>
                     {
-                        InvertApplication.Execute(() =>
-                        {
-                            d.Setter(d.DataObject, null);
-                        });
+
                     }));
                     foreach (var graphItem in items)
                     {
                         var graphItem1 = graphItem;
                         menu.AddItem(new SelectionMenuItem(graphItem1, () =>
                         {
-                            InvertApplication.Execute(() =>
-                            {
-                                d.Setter(d.DataObject, graphItem1);
-                            });
+
                         }));
                     }
 
@@ -728,10 +712,7 @@ namespace QF.GraphDesigner.Unity
                     }
                     if (Event.current.isKey && Event.current.keyCode == KeyCode.Return)
                     {
-                        InvertApplication.Execute(() =>
-                        {
 
-                        });
                     }
                 }
                 else if (d.InspectorType == InspectorType.TypeSelection)
@@ -860,11 +841,6 @@ namespace QF.GraphDesigner.Unity
 
                     if (EditorGUI.EndChangeCheck())
                     {
-                        InvertApplication.Execute(() =>
-                        {
-                            d.Setter(d.DataObject, d.CachedValue);
-                        });
-
                     }
                 }
                 else if (d.Type == typeof(Type))

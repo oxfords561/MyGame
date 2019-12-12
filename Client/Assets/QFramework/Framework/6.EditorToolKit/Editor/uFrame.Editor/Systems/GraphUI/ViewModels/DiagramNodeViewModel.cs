@@ -546,8 +546,6 @@ namespace QF.GraphDesigner
         {
             if (!IsEditable) return;
             if (!IsEditing) return;
-            InvertApplication.Execute(new ApplyRenameCommand() { Item = GraphItemObject, Name = editText, Old = GraphItemObject.Name });
-
             Dirty = true;
         }
 

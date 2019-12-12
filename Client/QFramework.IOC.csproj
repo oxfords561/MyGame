@@ -253,14 +253,14 @@
  <Reference Include="DOTweenEditor">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/3rdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
+ <Reference Include="QFramework.Log">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/QFramework/Framework/1.Core/Log/QFramework.Log.dll</HintPath>
+ </Reference>
  <Reference Include="PEProtocol">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PEProtocol.dll</HintPath>
  </Reference>
  <Reference Include="PESocket">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PESocket.dll</HintPath>
- </Reference>
- <Reference Include="QFramework.Log">
- <HintPath>D:/GitProjects/MyGame/Client/Assets/QFramework/Framework/1.Core/Log/QFramework.Log.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

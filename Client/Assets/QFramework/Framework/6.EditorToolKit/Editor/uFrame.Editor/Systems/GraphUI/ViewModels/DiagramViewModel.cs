@@ -5,7 +5,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using QF.GraphDesigner;
 using Invert.Data;
-using Invert.Windows;
 using QF.MVVM;
 using UnityEngine;
 
@@ -539,33 +538,7 @@ namespace QF.GraphDesigner
 
         public void Navigate()
         {
-
-
-            InvertApplication.Execute(new FilterBySelectionCommand()); 
-//
-//            if (SelectedNode == null) return;
-//            if (SelectedNode.IsFilter)
-//            {
-//
-//                if (SelectedNode.GraphItemObject == GraphData.CurrentFilter)
-//                {
-//                    GraphData.PopFilter();
-//                    GraphData.UpdateLinks();
-//
-//                }
-//                else
-//                {
-//                    var graphFilter = SelectedNode.GraphItemObject as IGraphFilter;
-//                    GraphData.PushFilter(graphFilter);
-//                    GraphData.UpdateLinks();
-//                }
-//                //   if (command.SaveInHistory) SaveNewStep(null);
-//
-//            }
-//            InvertApplication.Execute(new FilterBySelectionCommand()
-//            {
-//                
-//            });
+            
         }
 
         public void Save()
@@ -636,14 +609,7 @@ namespace QF.GraphDesigner
             var items = SelectedNodeItems.OfType<ItemViewModel>().Where(p => p.IsEditing).ToArray();
             if (items.Length > 0)
             {
-                InvertApplication.Execute(() =>
-                {
-                    foreach (var item in items)
-                    {
-                        item.EndEditing();
 
-                    }
-                });
             }
 
             DeselectAll();
@@ -745,24 +711,7 @@ namespace QF.GraphDesigner
         }
 
         public bool IsLoading { get; set; }
-
-
-
-        public void NavigateTo(string identifier)
-        {
-            InvertApplication.Execute(new NavigateByIdCommand()
-            {
-                Identifier = identifier
-            });
-        }
-        public void NavigateByName(string name)
-        {
-
-          InvertApplication.Execute(new NavigateByNameCommand()
-          {
-              ItemName = name
-          });
-        }
+        
 
         public void ShowQuickAdd()
         {

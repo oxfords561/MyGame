@@ -19,27 +19,10 @@ namespace QF.GraphDesigner
 
         public Color Tint { get; set; }
 
-        public NodeInputConfig NameConfig(ConfigProperty<IDiagramNodeItem, string> name)
-        {
-            Name = name;
-            return this;
-        }
 
-        public NodeInputConfig NameConfig(string literal)
-        {
-            Name = new ConfigProperty<IDiagramNodeItem, string>(literal);
-            return this;
-        }
-
-        public NodeInputConfig NameConfig(Func<IDiagramNodeItem, string> selector)
-        {
-            Name = new ConfigProperty<IDiagramNodeItem, string>(selector);
-            return this;
-        }
         //public string Name { get; set; }
-        public string OutputName { get; set; }
+
         public bool IsAlias { get; set; }
-        public Func<IDiagramNodeItem, IDiagramNodeItem, bool> Validator { get; set; }
         public PropertyInfo PropertyInfo { get; set; }
         public Slot AttributeInfo { get; set; }
 

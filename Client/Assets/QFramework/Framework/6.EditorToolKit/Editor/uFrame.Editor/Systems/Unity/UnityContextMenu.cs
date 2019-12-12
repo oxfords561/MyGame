@@ -24,10 +24,9 @@ namespace QF.GraphDesigner.Unity
                 var groupCount = 0;
                 foreach (var editorCommand in group.OrderBy(p => p.Order))
                 {
-                    ICommand command = editorCommand.Command;
                     genericMenu.AddItem(new GUIContent(editorCommand.Title),editorCommand.Checked, () =>
                     {
-                        InvertApplication.Execute(command);
+
                     } );
                     groupCount ++;
                 }

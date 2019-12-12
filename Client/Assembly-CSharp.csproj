@@ -114,9 +114,19 @@
      <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AudioSoundMsg.cs" />
      <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\AudioVoiceMsg.cs" />
      <Compile Include="Assets\QFramework\Framework\7.Audio\Msg\RemoteRetainAudioMsg.cs" />
+     <Compile Include="Assets\QFrameworkData\QAssets.cs" />
+     <Compile Include="Assets\Scripts\Common\Constants.cs" />
+     <Compile Include="Assets\Scripts\Common\PETools.cs" />
+     <Compile Include="Assets\Scripts\Common\SystemRoot.cs" />
      <Compile Include="Assets\Scripts\Net\ClientSession.cs" />
+     <Compile Include="Assets\Scripts\Service\LoginSys.cs" />
      <Compile Include="Assets\Scripts\Service\NetSvc.cs" />
+     <Compile Include="Assets\Scripts\Service\ResSvc.cs" />
      <Compile Include="Assets\Scripts\System\GameRoot.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\LoadingWnd.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\LoadingWnd.Designer.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\LoginWnd.cs" />
+     <Compile Include="Assets\Scripts\UIWindow\LoginWnd.Designer.cs" />
      <None Include="Assets\QFramework\Framework\5.ShaderLib\CGInclude\UIGrabPass.cginc" />
      <None Include="Assets\QFramework\Framework\4.ScriptCollection\ShaderLib\Framework3D.cginc" />
      <None Include="Assets\Compond\MakeChar\Shader\PlayerShader.shader" />
@@ -364,14 +374,14 @@
  <Reference Include="DOTween">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/3rdParty/DOTween/DOTween.dll</HintPath>
  </Reference>
+ <Reference Include="QFramework.Log">
+ <HintPath>D:/GitProjects/MyGame/Client/Assets/QFramework/Framework/1.Core/Log/QFramework.Log.dll</HintPath>
+ </Reference>
  <Reference Include="PEProtocol">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PEProtocol.dll</HintPath>
  </Reference>
  <Reference Include="PESocket">
  <HintPath>D:/GitProjects/MyGame/Client/Assets/Scripts/Net/PESocket.dll</HintPath>
- </Reference>
- <Reference Include="QFramework.Log">
- <HintPath>D:/GitProjects/MyGame/Client/Assets/QFramework/Framework/1.Core/Log/QFramework.Log.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Unity2018/2019.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

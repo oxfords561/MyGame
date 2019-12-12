@@ -1,5 +1,3 @@
-using Invert.uFrame.Editor;
-
 namespace QF.GraphDesigner
 {
     public interface IInputHandler

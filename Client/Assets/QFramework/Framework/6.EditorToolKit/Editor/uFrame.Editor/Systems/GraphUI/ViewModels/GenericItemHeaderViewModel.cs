@@ -1,5 +1,4 @@
 using QF.GraphDesigner;
-using Invert.uFrame.Editor.ViewModels;
 using UnityEngine;
 
 namespace QF.GraphDesigner
@@ -41,14 +40,12 @@ namespace QF.GraphDesigner
         public override Vector2 Position { get; set; }
         public override string Name { get; set; }
         public GraphItemViewModel NodeViewModel { get; set; }
-        public ICommand AddCommand { get; set; }
         public NodeConfigBase NodeConfig { get; set; }
         public NodeConfigSectionBase SectionConfig { get; set; }
         public bool IsBig { get; set; }
 
         public void Add()
         {
-            InvertApplication.Execute(AddCommand);
         }
     }
 }

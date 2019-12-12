@@ -18,12 +18,9 @@ internal class WIN32_FIND_DATA
     public uint ftLastWriteTime_dwHighDateTime;
     public uint nFileSizeHigh;
     public uint nFileSizeLow;
-    public int dwReserved0;
-    public int dwReserved1;
-    [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+
     public string cFileName;
-    [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 14)]
-    public string cAlternateFileName;
+
 
     /// <summary>
     /// Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.

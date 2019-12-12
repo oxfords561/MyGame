@@ -4,15 +4,7 @@ using Invert.Data;
 using UnityEngine;
 
 namespace QF.GraphDesigner
-{ 
-    public abstract class GraphItemViewModel<TData> : GraphItemViewModel
-    {
-        public TData Data
-        {
-            get { return (TData)DataObject; }
-        }
-    }
-
+{
     public abstract class GraphItemViewModel : ViewModel,IDataRecordInserted, IDataRecordRemoved, IDataRecordPropertyChanged
     {
         public virtual bool IsNewLine { get; set; }

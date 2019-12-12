@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Invert.Data;
 using QF.Json;
-using QF;
 using UnityEngine;
 
 namespace QF.GraphDesigner

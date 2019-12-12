@@ -67,7 +67,6 @@ namespace QF.GraphDesigner.Unity
             var guiContent = new GUIContent(command.Title);
             if (GUILayout.Button(guiContent, style))
             {
-                InvertApplication.Execute(command.Command);
             }
             InvertGraphEditor.PlatformDrawer.SetTooltipForRect(GUILayoutUtility.GetLastRect(),command.Description);
             

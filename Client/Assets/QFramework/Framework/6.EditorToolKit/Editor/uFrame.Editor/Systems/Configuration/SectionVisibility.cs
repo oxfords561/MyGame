@@ -4,6 +4,5 @@ namespace QF.GraphDesigner
     {
         Always,
         WhenNodeIsFilter,
-        WhenNodeIsNotFilter
     }
 }

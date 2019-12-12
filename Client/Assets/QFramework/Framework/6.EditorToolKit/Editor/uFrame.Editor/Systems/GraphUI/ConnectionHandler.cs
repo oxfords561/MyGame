@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using QF.GraphDesigner;
-using Invert.Windows;
 //using UnityEditor;
 using UnityEngine;
 
@@ -171,10 +170,7 @@ namespace QF.GraphDesigner
             base.OnMouseUp(e);
             if (CurrentConnection != null)
             {
-                InvertApplication.Execute(new LambdaCommand("Create Connection",() =>
-                {
-                    CurrentConnection.Apply(CurrentConnection);
-                }));
+
             }
             else
             {

@@ -190,21 +190,7 @@ namespace QF.GraphDesigner
                     SectionConfig = section1,
 
                 };
-                //if (section.AttributeInfo != null)
-                //{
-                //    header.IsNewLine = inputConfig.AttributeInfo.IsNewRow;
-                //}
-                //else
-                //{
-                //    header.IsNewLine = true;
-                //}
 
-                header.AddCommand =section1.AllowAdding ? new LambdaCommand("Add Item",() =>
-                {
-                    OnAdd(section, section1, this);
-                }) : null; 
-                
-                
                 ContentItems.Add(header);
             }
 
@@ -302,18 +288,7 @@ namespace QF.GraphDesigner
 
             if (typeof (ITypedItem).IsAssignableFrom(section1.SourceType))
             {
-                InvertApplication.Execute(new SelectTypeCommand()
-                {
-                    PrimitiveOnly = false,
-                    AllowNone = false,
-                    IncludePrimitives = true,
-                    Item = item as ITypedItem,
-                    OnSelectionFinished = () =>
-                    {
-                        item.IsSelected = true;
-                        item.IsEditing = true;
-                    }
-                });
+
             }
             else
             {
